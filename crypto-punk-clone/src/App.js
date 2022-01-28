@@ -1,9 +1,9 @@
 
 import './App.css';
 import Header from './components/Header';
-import CollectionCard from './components/CollectionCard';
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import NftList from './components/NftList';
 
 function App() {
   const [nftListData, setNftListData] = useState([])
@@ -28,11 +28,7 @@ function App() {
   return (
     <div className='app'>
       <Header />
-      <CollectionCard
-        id={0}
-        name={'Missing Tooth Smiley'}
-        traits={[{ 'value': '8' }]}
-        image={'https://lh3.googleusercontent.com/xceq4iY8cugIESnwC5aiDeUGW9dgvSnZEAWCk1uSlEF-K4Bi_PILkoAAjegorc_JHRv3Nj3porpU1Ar_3KXRwts1EAuOjMk8n3JlUg=w600'} />
+      <NftList nftListData={nftListData} />
     </div>
 
   );
